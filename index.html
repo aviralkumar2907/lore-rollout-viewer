@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Step through real proposed directions, executor findings, and final answers from recorded MR V3 SFT rollouts.">
+  <title>Directions & execution · LOrE</title>
+  <link rel="stylesheet" href="vendor/katex.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="vendor/katex.min.js"></script>
+  <script defer src="vendor/marked.min.js"></script>
+  <script defer src="data.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">LOrE <span>Exploration in action</span></div>
+    <div class="tools">
+      <label class="sr-only" for="example">Choose a rollout</label><select id="example"></select>
+      <button id="fontSmaller" aria-label="Decrease text size" title="Smaller text">A−</button>
+      <button id="fontLarger" aria-label="Increase text size" title="Larger text">A+</button>
+      <button id="fullscreen">Full screen</button>
+    </div>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">RECORDED ROLLOUT</p><h1>Directions & execution</h1></div>
+      <div class="question-brief"><div class="question-label">THE QUESTION <button id="showQuestion" class="text-button">Read full problem ↗</button></div><h2 id="problemTitle"></h2><p id="problemSummary"></p></div>
+    </section>
+    <section class="timeline" aria-label="Exploration rounds">
+      <span class="timeline-label">Round</span><div id="rounds"></div>
+      <button id="finalButton" class="final-button">Final answer ↗</button>
+    </section>
+    <div class="workspace">
+      <section class="directions" aria-labelledby="directionsHeading">
+        <div class="section-heading"><div><p class="role purple">ORCHESTRATOR</p><h2 id="directionsHeading">Proposed directions</h2></div><span id="directionCount" class="count"></span></div>
+        <div id="directions" class="direction-list"></div>
+        <div class="panel-footer">Select a direction to inspect its execution.</div>
+      </section>
+      <section class="execution" aria-labelledby="executionHeading">
+        <div class="section-heading"><div><p class="role green">EXECUTOR</p><h2 id="executionHeading">What happened</h2></div><button id="reveal" class="reveal">Hide execution</button></div>
+        <div id="executionContent">
+          <div class="execution-meta"><span id="activeDirection"></span><span>Recorded model output</span></div>
+          <div class="tabs" role="tablist" aria-label="Executor output">
+            <button role="tab" data-tab="core_result" id="tab-core_result" aria-controls="output">Core result</button>
+            <button role="tab" data-tab="found" id="tab-found" aria-controls="output">Findings</button>
+            <button role="tab" data-tab="rationale" id="tab-rationale" aria-controls="output">Rationale</button>
+          </div>
+          <div id="output" class="prose output" role="tabpanel" tabindex="0"></div>
+        </div>
+        <div id="hiddenExecution" hidden><span class="large-number">02</span><h3>What did the executor find?</h3><p>Choose a direction, then reveal its recorded result.</p><button id="revealBig" class="primary">Show execution</button></div>
+      </section>
+    </div>
+    <footer>
+      <div class="source">Source: <a href="https://huggingface.co/spaces/HerrHruby/MR-V3-SFT-Results-Viewer" target="_blank" rel="noopener">MR V3 SFT Results Viewer ↗</a><span id="recordId"></span></div>
+      <div class="navigation"><span class="keyboard-hint">← → directions · ↑ ↓ rounds</span><button id="prev">← Previous</button><button id="next">Next direction →</button></div>
+    </footer>
+  </main>
+  <dialog id="dialog"><div class="dialog-head"><p class="eyebrow" id="dialogLabel"></p><button id="closeDialog" aria-label="Close dialog">Close ×</button></div><h2 id="dialogTitle"></h2><div id="dialogBody" class="prose"></div></dialog>
+  <div id="announcement" class="sr-only" aria-live="polite"></div>
+</body>
+</html>

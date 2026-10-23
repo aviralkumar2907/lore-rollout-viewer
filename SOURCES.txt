@@ -1,0 +1,9 @@
+Rollout data and reference viewer:
+https://huggingface.co/spaces/HerrHruby/MR-V3-SFT-Results-Viewer
+Downloaded 2026-10-23. Original Space declares MIT license.
+Selected records: test:108, test:69, test:242, test:266, test:143, test:141.
+The viewer preserves recorded direction, found, rationale, core_result and final_answer fields. Short problem summaries and menu labels are editorial descriptions for the talk. Only display escaping is normalized. No live model execution occurs.
+
+Math renderer: KaTeX (MIT), https://github.com/KaTeX/KaTeX
+Markdown parser: marked (MIT), https://github.com/markedjs/marked
+Libraries and KaTeX fonts were obtained from the reference Space's vendor directory.
