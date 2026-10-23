@@ -8,7 +8,7 @@
   <Description DefaultValue="Explore recorded directions and executor outputs inside a PowerPoint slide. No viewer login required."/>
   <Hosts><Host Name="Presentation"/></Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://aviralkumar2907.github.io/lore-rollout-viewer/content.html"/>
+    <SourceLocation DefaultValue="https://aviralkumar2907.github.io/lore-rollout-viewer/content.html?v=2"/>
     <RequestedWidth>1000</RequestedWidth>
     <RequestedHeight>600</RequestedHeight>
   </DefaultSettings>
