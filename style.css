@@ -16,3 +16,5 @@ main{height:calc(100dvh - 68px);display:flex;flex-direction:column}.intro,.timel
 .office-content footer{padding:9px 0}
 .office-content .direction{padding:13px 15px}
 @media(max-height:640px){.office-content .intro{padding-bottom:12px}.office-content .section-heading{padding:13px 0}.office-content .topbar{height:44px}.office-content main{height:calc(100dvh - 44px);padding-top:12px}.office-content .timeline{padding:8px 0}.office-content .keyboard-hint{display:none}}
+
+.office-content .intro{display:block}.office-content .intro>div:first-child{display:none}.office-content .question-brief{border-left:0;padding-left:0}.office-content .question-brief p{max-width:none}
