@@ -18,3 +18,16 @@ main{height:calc(100dvh - 68px);display:flex;flex-direction:column}.intro,.timel
 @media(max-height:640px){.office-content .intro{padding-bottom:12px}.office-content .section-heading{padding:13px 0}.office-content .topbar{height:44px}.office-content main{height:calc(100dvh - 44px);padding-top:12px}.office-content .timeline{padding:8px 0}.office-content .keyboard-hint{display:none}}
 
 .office-content .intro{display:block}.office-content .intro>div:first-child{display:none}.office-content .question-brief{border-left:0;padding-left:0}.office-content .question-brief p{max-width:none}
+
+/* Office's WebView resizes between editing and presenting. Keep scrolling
+   inside each reading pane rather than letting grid content grow the page. */
+html.office-document{height:100%;overflow:hidden}
+body.office-content{height:100%;overflow:hidden;display:flex;flex-direction:column}
+.office-content .topbar{flex:0 0 50px}
+.office-content main{height:auto;min-height:0;flex:1;width:100%;margin:0 auto}
+.office-content .workspace{height:auto;min-height:0;grid-template-rows:minmax(0,1fr);overflow:hidden}
+.office-content .execution,.office-content .directions{min-height:0;overflow:hidden}
+.office-content .execution-meta,.office-content .tabs{flex-shrink:0}
+.office-content .section-heading{min-height:42px;margin-bottom:12px}
+.office-content .execution,.office-content .directions{padding-top:16px}
+@media(max-height:640px){.office-content .topbar{flex-basis:44px}.office-content .section-heading{padding:0}.office-content .panel-footer{padding:8px 0}}
